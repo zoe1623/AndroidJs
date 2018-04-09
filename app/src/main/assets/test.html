@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	</head>
+	<script type="text/javascript">
+		<!-- android 代码会调用此方法, 把token传递过来 -->
+		function getTokenFromAndroid(token) {
+			alert(token);
+		};
+		<!-- 调用此方法Android代码中会调用Token相关代码,然后回调getTokenFromAndroid(token) -->
+		function produceToken(){
+			window.android.produceToken();
+		}
+		<!-- 调用此方法Android代码中会调用销毁当前界面相关代码 -->
+		function finish(){
+			window.android.finish();
+		}
+	</script>
+	<body bgcolor="#0e1927">
+		<br/><br/><br/>
+		<button onclick="finish()" style="font-size:50px">关闭页面</button><br/><br/><br/>
+		<button onclick="produceToken()"style="font-size:50px">获取 token</button><br/><br/><br/>
+	</body>
+</html>
